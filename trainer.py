@@ -43,13 +43,13 @@ class Trainer:
 
 
             if verbose:
-                print(f"Epoch {epoch+1}, Loss: {loss.item()}")
+                print(f"Epoch {epoch+1}, Loss: {loss.item():.4f}")
 
         
         min_loss = min(self.losses)
         print("--------------------------------------------------------")
         print("Summary : ")
-        print(f"Total epochs : {epochs}, minimum loss : {min_loss}")
+        print(f"Total epochs : {epochs}, minimum loss : {min_loss:.4f}")
 
     def predict(self, x):
         self.model.eval()
