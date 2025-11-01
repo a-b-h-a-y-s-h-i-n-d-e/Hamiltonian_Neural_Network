@@ -26,13 +26,11 @@ class HNN(nn.Module):
         return H
 
     def symplectic_gradient(self, z: torch.Tensor) -> torch.Tensor:
-
         # Ensure z requires gradients
         if not z.requires_grad:
             z = z.requires_grad_(True)
 
         H = self.net(z).squeeze(-1)
-
         grad_H = grad(H.sum(), z, create_graph=True)[0]
 
         dim = z.shape[-1] // 2
