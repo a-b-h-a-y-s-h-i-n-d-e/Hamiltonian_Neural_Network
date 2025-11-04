@@ -1,4 +1,4 @@
-# Minimal Implementation of Hamilton Neural Network
+# Minimal Implementation of Hamiltonian Neural Network
 
 A lightweight and educational implementation of **Hamiltonian Neural Networks (HNNs)** — a physics-informed neural model that learns the underlying *Hamiltonian function* from data, ensuring **energy conservation** and **physically consistent dynamics**.
 
@@ -34,11 +34,32 @@ plt.plot(losses)
 
 <p align="center"> <img src="mass_spring/loss_curve.png" alt="HNN Training Loss Curve" width="600"> </p>
 
+
+---
+
+### 📂 Code Structure Overview
+
+| File / Folder | Description |
+|----------------|--------------|
+| **`hnn.py`** | Defines the main **Hamiltonian Neural Network (HNN)** class. Computes the scalar Hamiltonian `H(q, p)` and the **symplectic gradient** to model physically consistent dynamics. |
+| **`mlp.py`** | Implements a simple **Multi-Layer Perceptron (MLP)** used as the function approximator for the Hamiltonian. |
+| **`trainer.py`** | Contains the **Trainer** class — manages the training loop, loss computation, and logging of metrics for visualization. |
+| **`mass_spring/`** | Example dataset and simulation for a **1D mass-spring system**, commonly used to train and test the HNN. |
+| **`pendulum/`** | Example dataset and simulation for a **simple pendulum**, showing the model’s ability to generalize to other dynamical systems. |
+
+---
+
+
+
+
+
 ### 🧾 References
 
 * Greydanus, S., Dzamba, M., & Yosinski, J. (2019).
 Hamiltonian Neural Networks.
 NeurIPS 2019. [https://arxiv.org/abs/1906.01563](https://arxiv.org/abs/1906.01563)
+
+* Repository for original implementation : [greydanus/hamiltonian-nn](https://github.com/greydanus/hamiltonian-nn)
 
 * Scibits Blog (JAX Implementation) - [article link](https://scibits.blog/posts/hnn/)
 
